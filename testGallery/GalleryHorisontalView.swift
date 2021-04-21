@@ -173,9 +173,9 @@ import UIKit
             if isRightSwipe && (translation.x < 0) {return}
             if isLeftSwipe && (translation.x > 0) {return}
             
-            if translation.x < 0 {translation.x = -translation.x}
-            
-            print(translation.x / (UIScreen.main.bounds.width))
+            if translation.x < 0 {
+                translation.x = -translation.x
+            }
             interactiveAnimator.fractionComplete = translation.x / (UIScreen.main.bounds.width)
             
         case .ended:
