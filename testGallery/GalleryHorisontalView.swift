@@ -129,6 +129,9 @@ import UIKit
         case .changed:
             var translation = recognizer.translation(in: self.view)
             
+            print(translation)
+            
+            
             if translation.x < 0 && (!isLeftSwipe) && (!chooseFlag) {
                 if self.currentIndex == (images.count - 1) {
                     interactiveAnimator.stopAnimation(true)
@@ -136,6 +139,8 @@ import UIKit
                 }
                 chooseFlag = true
                 onChange(isLeft: true)
+                
+                
                 interactiveAnimator.stopAnimation(true)
                 interactiveAnimator.addAnimations { [weak self] in
                     self?.mainImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
